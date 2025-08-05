@@ -144,7 +144,7 @@ class WelcomePage(QWidget):
         self.welcome_title.setText(get_text("dialogs.titles.welcome_title"))
         self.lang_label.setText(get_text("app.language"))
         self.welcome_message.setText(get_text("dialogs.messages.welcome_message"))
-        self.github_label.setText(get_text("copyright.github"))
+        self.github_label.setText("https://github.com")
         
         continue_text = f"{get_text('buttons.ok')} - {get_text('dialogs.messages.continue_text')}"
         self.continue_btn.setText(continue_text)
@@ -152,7 +152,7 @@ class WelcomePage(QWidget):
     def _open_github(self):
         """打开GitHub链接"""
         try:
-            webbrowser.open(get_text("copyright.github"))
+            webbrowser.open("https://github.com")
         except Exception as e:
             print(f"Error opening GitHub link: {e}")
     

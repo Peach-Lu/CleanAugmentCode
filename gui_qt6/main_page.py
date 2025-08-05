@@ -76,7 +76,6 @@ class MainPage(QWidget):
         
         # 添加弹性空间
         main_layout.addStretch()
-    
     def _create_top_bar(self, parent_layout):
         """创建顶部栏"""
         top_layout = QHBoxLayout()
@@ -103,13 +102,14 @@ class MainPage(QWidget):
         top_layout.addWidget(self.language_combo)
         top_layout.addStretch()
         
-        # 关于按钮
+        # 关于按钮 - 已隐藏
         self.about_btn = ModernButton(get_text("app.about"), "secondary")
         # 根据语言调整按钮宽度
         if self.config_manager.get_language() == "en_US":
             self.about_btn.setMaximumWidth(100)  # 英文版本增加宽度
         else:
             self.about_btn.setMaximumWidth(80)   # 中文版本保持原宽度
+        self.about_btn.hide()  # 隐藏关于按钮
         top_layout.addWidget(self.about_btn)
         
         parent_layout.addLayout(top_layout)
@@ -299,13 +299,16 @@ class MainPage(QWidget):
             btn_width = 100
             self.clear_log_btn.setFixedSize(btn_width, 25)
 
+        # 确保关于按钮保持隐藏状态
+        self.about_btn.hide()
+
         # 更新标签文本
         self.title_label.setText(get_text("app.title"))
         self.welcome_label.setText(get_text("app.welcome"))
         self.ide_label.setText(get_text("app.select_ide"))
         self.version_label.setText(get_text("app.version"))
-        self.copyright_label.setText(get_text("copyright.notice"))
-        self.fraud_label.setText(get_text("copyright.report_fraud"))
+        # self.copyright_label.setText(get_text("copyright.notice"))
+        # self.fraud_label.setText(get_text("copyright.report_fraud"))
 
     def _show_about(self):
         """显示关于对话框"""

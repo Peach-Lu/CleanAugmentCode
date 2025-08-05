@@ -266,40 +266,40 @@ class AboutDialog:
                                 fg='#6b7280', bg='#f5f5f5')
         version_label.pack(pady=(0, 30))
         
-        # Copyright notice
-        copyright_label = tk.Label(main_frame,
-                                  text=get_text("copyright.notice"),
-                                  font=('Microsoft YaHei', 11),
-                                  fg='#374151', bg='#f5f5f5')
-        copyright_label.pack(pady=(0, 10))
-        
-        # License
-        license_label = tk.Label(main_frame,
-                                text=get_text("copyright.license"),
-                                font=('Microsoft YaHei', 11),
-                                fg='#374151', bg='#f5f5f5')
-        license_label.pack(pady=(0, 20))
-        
-        # GitHub link
-        github_label = tk.Label(main_frame,
-                               text=get_text("copyright.github"),
-                               font=('Microsoft YaHei', 11, 'underline'),
-                               fg='#3b82f6', bg='#f5f5f5',
-                               cursor='hand2')
-        github_label.pack(pady=(0, 30))
-        github_label.bind('<Button-1>', self._open_github)
-        
-        # Warning frame
-        warning_frame = tk.Frame(main_frame, bg='#fef3c7', relief='solid', bd=1)
-        warning_frame.pack(fill='x', pady=(0, 30))
-        
-        warning_text = get_text("copyright.fraud_warning")
-        warning_label = tk.Label(warning_frame,
-                                text=warning_text,
-                                font=('Microsoft YaHei', 9),
-                                fg='#92400e', bg='#fef3c7',
-                                wraplength=450, justify='center')
-        warning_label.pack(padx=15, pady=15)
+        # Copyright notice - 已隐藏
+        # copyright_label = tk.Label(main_frame,
+        #                           text=get_text("copyright.notice"),
+        #                           font=('Microsoft YaHei', 11),
+        #                           fg='#374151', bg='#f5f5f5')
+        # copyright_label.pack(pady=(0, 10))
+
+        # License - 已隐藏
+        # license_label = tk.Label(main_frame,
+        #                         text=get_text("copyright.license"),
+        #                         font=('Microsoft YaHei', 11),
+        #                         fg='#374151', bg='#f5f5f5')
+        # license_label.pack(pady=(0, 20))
+
+        # GitHub link - 已隐藏
+        # github_label = tk.Label(main_frame,
+        #                        text="https://github.com/BasicProtein/AugmentCode-Free",
+        #                        font=('Microsoft YaHei', 11, 'underline'),
+        #                        fg='#3b82f6', bg='#f5f5f5',
+        #                        cursor='hand2')
+        # github_label.pack(pady=(0, 30))
+        # github_label.bind('<Button-1>', self._open_github)
+
+        # Warning frame - 已隐藏
+        # warning_frame = tk.Frame(main_frame, bg='#fef3c7', relief='solid', bd=1)
+        # warning_frame.pack(fill='x', pady=(0, 30))
+
+        # warning_text = "⚠️ 本项目完全开源免费！\n如果有人向您收费，请立即联系销售方\n退款并举报诈骗行为。"
+        # warning_label = tk.Label(warning_frame,
+        #                         text=warning_text,
+        #                         font=('Microsoft YaHei', 9),
+        #                         fg='#92400e', bg='#fef3c7',
+        #                         wraplength=450, justify='center')
+        # warning_label.pack(padx=15, pady=15)
 
         # Don't show again checkbox (only if enabled)
         if self.show_dont_show_again and self.config_manager:
@@ -336,7 +336,7 @@ class AboutDialog:
     def _open_github(self, event=None):
         """Open GitHub repository"""
         try:
-            webbrowser.open(get_text("copyright.github"))
+            webbrowser.open("https://github.com/BasicProtein/AugmentCode-Free")
         except Exception as e:
             print(f"Error opening GitHub link: {e}")
 

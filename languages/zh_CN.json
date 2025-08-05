@@ -55,14 +55,7 @@
     "completed": "✅ 所有工具执行已完成",
     "failed": "❌ 工具执行失败"
   },
-  "copyright": {
-    "notice": "© 2025 BasicProtein. All rights reserved.",
-    "license": "Licensed under MIT License", 
-    "github": "https://github.com/BasicProtein/AugmentCode-Free",
-    "fraud_warning": "⚠️ 本项目完全开源免费！\n如果有人向您收费，请立即联系销售方\n退款并举报诈骗行为。",
-    "open_source": "本项目开源免费",
-    "report_fraud": "如遇付费请举报诈骗"
-  },
+
   "console": {
     "starting": "🚀 AugmentCode-Free 工具启动中...",
     "gui_starting": "✅ 正在启动图形界面...",

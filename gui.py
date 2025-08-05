@@ -390,14 +390,14 @@ class WelcomePage:
         self.lang_label.config(text=get_text("app.language"))
         self.welcome_message.config(text=get_text("dialogs.messages.welcome_message"))
         self.warning_label.config(text=get_text("dialogs.messages.first_run_warning"))
-        self.github_label.config(text=get_text("copyright.github"))
+        self.github_label.config(text="https://github.com")
         self.continue_btn.config(text=get_text("buttons.ok") + " - " + get_text("dialogs.messages.continue_text"))
         self._draw_title()
     
     def _open_github(self, event=None):
         """Open GitHub repository"""
         try:
-            webbrowser.open(get_text("copyright.github"))
+            webbrowser.open("https://github.com")
         except Exception as e:
             print(f"Error opening GitHub link: {e}")
     
@@ -497,13 +497,13 @@ class MainPage:
         self.language_combo.pack(side='left')
         self.language_combo.bind('<<ComboboxSelected>>', self._on_language_change)
 
-        # About button (right side)
+        # About button (right side) - 已隐藏
         about_btn = tk.Button(top_bar, text=get_text("app.about"),
                              font=('Microsoft YaHei', 9),
                              fg='#6b7280', bg='#f5f5f5',
                              relief='flat', cursor='hand2',
                              bd=0, command=self._show_about)
-        about_btn.pack(side='right')
+        # about_btn.pack(side='right')  # 隐藏关于按钮
         self.ui_elements['about_btn'] = about_btn
 
         # Logo/Icon area - CursorPro style circular icon
@@ -597,35 +597,35 @@ class MainPage:
         version_label.pack(pady=(0, 5))
         self.ui_elements['version_label'] = version_label
 
-        # Copyright info
-        copyright_label = tk.Label(bottom_frame, text=get_text("copyright.notice"),
-                                  font=('Microsoft YaHei', 9),
-                                  fg='#9ca3af', bg='#f5f5f5')
-        copyright_label.pack(pady=(0, 5))
-        self.ui_elements['copyright_label'] = copyright_label
+        # Copyright info - 已隐藏
+        # copyright_label = tk.Label(bottom_frame, text=get_text("copyright.notice"),
+        #                           font=('Microsoft YaHei', 9),
+        #                           fg='#9ca3af', bg='#f5f5f5')
+        # copyright_label.pack(pady=(0, 5))
+        # self.ui_elements['copyright_label'] = copyright_label
 
-        # Open source notice with GitHub link
-        github_frame = tk.Frame(bottom_frame, bg='#f5f5f5')
-        github_frame.pack(pady=(0, 5))
+        # Open source notice with GitHub link - 已隐藏
+        # github_frame = tk.Frame(bottom_frame, bg='#f5f5f5')
+        # github_frame.pack(pady=(0, 5))
 
-        open_source_label = tk.Label(github_frame, text=get_text("copyright.open_source"),
-                                    font=('Microsoft YaHei', 9),
-                                    fg='#9ca3af', bg='#f5f5f5')
-        open_source_label.pack(side='left')
+        # open_source_label = tk.Label(github_frame, text=get_text("copyright.open_source"),
+        #                             font=('Microsoft YaHei', 9),
+        #                             fg='#9ca3af', bg='#f5f5f5')
+        # open_source_label.pack(side='left')
 
-        github_link = tk.Label(github_frame, text="GitHub",
-                              font=('Microsoft YaHei', 9, 'underline'),
-                              fg='#3b82f6', bg='#f5f5f5',
-                              cursor='hand2')
-        github_link.pack(side='left', padx=(5, 0))
-        github_link.bind('<Button-1>', self._open_github)
+        # github_link = tk.Label(github_frame, text="GitHub",
+        #                       font=('Microsoft YaHei', 9, 'underline'),
+        #                       fg='#3b82f6', bg='#f5f5f5',
+        #                       cursor='hand2')
+        # github_link.pack(side='left', padx=(5, 0))
+        # github_link.bind('<Button-1>', self._open_github)
 
-        # Fraud warning
-        fraud_label = tk.Label(bottom_frame, text=get_text("copyright.report_fraud"),
-                              font=('Microsoft YaHei', 9, 'bold'),
-                              fg='#dc2626', bg='#f5f5f5')
-        fraud_label.pack()
-        self.ui_elements['fraud_label'] = fraud_label
+        # Fraud warning - 已隐藏
+        # fraud_label = tk.Label(bottom_frame, text=get_text("copyright.report_fraud"),
+        #                       font=('Microsoft YaHei', 9, 'bold'),
+        #                       fg='#dc2626', bg='#f5f5f5')
+        # fraud_label.pack()
+        # self.ui_elements['fraud_label'] = fraud_label
 
         # Status info (hidden by default, shown in status updates)
         self.status_var = tk.StringVar(value="")
@@ -702,7 +702,7 @@ class MainPage:
     def _open_github(self, event=None):
         """Open GitHub repository"""
         try:
-            webbrowser.open(get_text("copyright.github"))
+            webbrowser.open("https://github.com")
         except Exception as e:
             print(f"Error opening GitHub link: {e}")
 
@@ -723,10 +723,10 @@ class MainPage:
             self.ui_elements['about_btn'].config(text=get_text("app.about"))
         if 'version_label' in self.ui_elements:
             self.ui_elements['version_label'].config(text=get_text("app.version"))
-        if 'copyright_label' in self.ui_elements:
-            self.ui_elements['copyright_label'].config(text=get_text("copyright.notice"))
-        if 'fraud_label' in self.ui_elements:
-            self.ui_elements['fraud_label'].config(text=get_text("copyright.report_fraud"))
+        # if 'copyright_label' in self.ui_elements:
+        #     self.ui_elements['copyright_label'].config(text=get_text("copyright.notice"))
+        # if 'fraud_label' in self.ui_elements:
+        #     self.ui_elements['fraud_label'].config(text=get_text("copyright.report_fraud"))
         if 'clear_btn' in self.ui_elements:
             self.ui_elements['clear_btn'].config(text=get_text("buttons.clear_log"))
 

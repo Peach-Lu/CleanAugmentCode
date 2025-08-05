@@ -138,11 +138,11 @@ class AboutDialog(QDialog):
         layout.addLayout(features_layout)
 
         # 添加开源声明
-        opensource_label = QLabel("本项目完全开源免费！")
-        opensource_label.setFont(get_default_font(10, bold=True))
-        opensource_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        opensource_label.setStyleSheet("color: #059669; margin: 10px 0px;")
-        layout.addWidget(opensource_label)
+        # opensource_label = QLabel("本项目完全开源免费！")
+        # opensource_label.setFont(get_default_font(10, bold=True))
+        # opensource_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        # opensource_label.setStyleSheet("color: #059669; margin: 10px 0px;")
+        # layout.addWidget(opensource_label)
         
         # 警告信息
         warning_frame = QFrame()
@@ -158,12 +158,12 @@ class AboutDialog(QDialog):
         warning_layout = QVBoxLayout(warning_frame)
         warning_layout.setContentsMargins(8, 8, 8, 8)  # 减小内边距
 
-        warning_text = "⚠️ 重要提示：\n本项目完全开源免费！如果有人向您收费，请立即联系销售方退款并举报诈骗行为。"
-        warning_label = QLabel(warning_text)
-        warning_label.setFont(get_default_font(8))  # 减小字体
-        warning_label.setStyleSheet("color: #92400e; line-height: 1.3;")
-        warning_label.setWordWrap(True)
-        warning_layout.addWidget(warning_label)
+        # warning_text = "⚠️ 重要提示：\n本项目完全开源免费！如果有人向您收费，请立即联系销售方退款并举报诈骗行为。"
+        # warning_label = QLabel(warning_text)
+        # warning_label.setFont(get_default_font(8))  # 减小字体
+        # warning_label.setStyleSheet("color: #92400e; line-height: 1.3;")
+        # warning_label.setWordWrap(True)
+        # warning_layout.addWidget(warning_label)
 
         layout.addWidget(warning_frame)
         
@@ -250,7 +250,7 @@ class AboutDialog(QDialog):
     def _open_github(self, event):
         """打开GitHub链接"""
         try:
-            webbrowser.open(get_text("copyright.github"))
+            webbrowser.open("https://github.com/BasicProtein/AugmentCode-Free")
         except Exception as e:
             print(f"Error opening GitHub link: {e}")
     
